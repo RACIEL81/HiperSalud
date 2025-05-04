@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<section class="servicios py-5">
+    <div class="container">
+        <h1 class="text-center mb-5">Nuestros Servicios Médicos</h1>
+        
+        <div class="row g-4">
+            <!-- Servicio 1 - Urgencias -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow">
+                    <img src="{{ url_for('static', filename='img/urgencias.jpg') }}" 
+                         class="card-img-top" 
+                         alt="Servicio de Urgencias 24 horas">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Urgencias 24 Horas</h3>
+                        <p class="card-text">Atención inmediata con:</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Equipos de última generación</li>
+                            <li class="list-group-item">Médicos especializados</li>
+                            <li class="list-group-item">Ambulancias equipadas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicio 2 - Telemedicina -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow">
+                    <img src="{{ url_for('static', filename='img/telemedicina.jpg') }}" 
+                         class="card-img-top" 
+                         alt="Servicio de Telemedicina">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Telemedicina</h3>
+                        <p class="card-text">Servicios disponibles:</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Consultas virtuales</li>
+                            <li class="list-group-item">Entrega de recetas digitales</li>
+                            <li class="list-group-item">Seguimiento remoto</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicio 3 - Cirugía -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow">
+                    <img src="{{ url_for('static', filename='img/cirugia.jpg') }}" 
+                         class="card-img-top" 
+                         alt="Cirugía Robótica Especializada">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Cirugía Especializada</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Tecnología robótica Da Vinci</li>
+                            <li class="list-group-item">Recuperación acelerada</li>
+                            <li class="list-group-item">Bajas tasas de complicaciones</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="alert alert-info">
+                    <h4>¿Necesitas un servicio especializado?</h4>
+                    <p class="mb-0">Contamos con más de 15 especialidades médicas. <a href="/contacto" class="alert-link">Contáctanos para más información</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

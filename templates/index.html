@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<section class="hero bg-light py-5 mt-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 class="display-4 mb-4">HIPERSALUD</h1>
+                <p class="lead mb-4">Tu bienestar cardíaco en manos de expertos.</p>
+                <a href="/contacto" class="btn btn-primary btn-lg">Solicitar cita</a>
+            </div>
+            <div class="col-md-6 text-center">
+                <video autoplay muted loop playsinline class="img-fluid rounded shadow" style="max-width: 100%;">
+                    <source src="{{ url_for('static', filename='img/hero-medicos.mp4') }}" type="video/mp4">
+                    Tu navegador no soporta el video.
+                </video>
+                <p class="mt-2">
+                   
+                    <a href="" target="_blank"></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="servicios-destacados py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Nuestros Servicios</h2>
+        <div class="row g-4">
+            <!-- Repetir para cada servicio -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow">
+                    <img src="{{ url_for('static', filename='img/urgencias.jpg') }}" 
+                         class="card-img-top" 
+                         alt="Servicio de urgencias">
+                    <div class="card-body">
+                        <h5 class="card-title">Urgencias 24/7</h5>
+                        <p class="card-text">Atención inmediata con equipos de última generación y personal calificado.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Agregar más servicios aquí -->
+        </div>
+    </div>
+</section>
+{% endblock %}
