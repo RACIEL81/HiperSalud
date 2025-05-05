@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center text-primary mb-4">Agenda tu cita</h2>
+        <p class="text-center text-dark">Déjanos tus datos y uno de nuestros asesores estará en contacto contigo.</p>
+        <form id="form-cita" class="mt-4">
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Tipo de cita" name="tipo_cita" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Nombre del paciente" name="nombre" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Apellidos del paciente" name="apellidos" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Tipo de documento" name="tipo_documento" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Número de documento" name="documento" required>
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Correo electrónico" name="correo" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Teléfono de contacto" name="telefono" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Selección de Sede" name="sede" required>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-success btn-lg" onclick="enviarWhatsApp()">Solicitar</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script>
+function enviarWhatsApp() {
+    const form = document.getElementById("form-cita");
+    const datos = new FormData(form);
+    const mensaje = `Hola, quiero agendar una cita con los siguientes datos:\n
+- Tipo de cita: ${datos.get("tipo_cita")}
+- Nombre: ${datos.get("nombre")} ${datos.get("apellidos")}
+- Documento: ${datos.get("tipo_documento")} ${datos.get("documento")}
+- Correo: ${datos.get("correo")}
+- Teléfono: ${datos.get("telefono")}
+- Sede: ${datos.get("sede")}`;
+
+    const telefono = "573143856779"; // Cambia por tu número de WhatsApp con código país
+    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, "_blank");
+}
+</script>
+{% endblock %}
