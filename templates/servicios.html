@@ -4,40 +4,111 @@
 <section class="servicios py-5">
     <div class="container">
         <h1 class="text-center mb-5">Nuestros Servicios Médicos</h1>
-
+        
         <div class="row g-4">
-            <!-- Tarjeta de Servicio -->
-            {% for servicio in [
-                {'img': 'img/u.jpg', 'titulo': 'Cardiología', 'descripcion': 'Atención inmediata con:', 'items': ['Consulta especializada', 'Electrocardiograma', 'Ecocardiograma', 'Prueba de esfuerzo', 'Monitoreo Holter']},
-                {'img': 'img/t.jpg', 'titulo': 'Hemodinamia', 'descripcion': 'Atención inmediata con:', 'items': ['Cateterismo cardíaco', 'Angioplastia coronaria', 'Implante de stents', 'Estudios hemodinámicos', 'Cuidados postoperatorios']},
-                {'img': 'img/c.jpg', 'titulo': 'Electrofisiología', 'descripcion': 'Atención inmediata con:', 'items': ['Estudios eléctricos del corazón', 'Ablación por radiofrecuencia', 'Implante de marcapasos', 'Mapeo electroanatómico', 'Seguimiento ambulatorio']},
-                {'img': 'img/c.jpg', 'titulo': 'Cirugía Cardiovascular', 'descripcion': 'Atención inmediata con:', 'items': ['Bypass coronario', 'Reparación valvular', 'Cirugía aórtica', 'Cuidados intensivos', 'Cirugía mínimamente invasiva']},
-                {'img': 'img/c.jpg', 'titulo': 'Cardiología no invasiva', 'descripcion': 'Atención inmediata con:', 'items': ['Ecocardiograma', 'Ergometría', 'Holter de presión', 'Consulta externa', 'Seguimiento de tratamientos']}
-            ] %}
+            <!-- Servicio 1 - Urgencias -->
             <div class="col-md-6 col-lg-4">
-                <div class="card h-100 shadow rounded-4">
-                    <img src="{{ url_for('static', filename=servicio.img) }}" class="card-img-top rounded-top-4" alt="{{ servicio.titulo }}">
+                <div class="card h-100 shadow">
+                    <img src="{{ url_for('static', filename='img/u.jpg') }}" 
+                         class="card-img-top" 
+                         alt="Cardiologia">
                     <div class="card-body">
-                        <h3 class="card-title text-primary">{{ servicio.titulo }}</h3>
-                        <p class="card-text">{{ servicio.descripcion }}</p>
+                        <h3 class="card-title text-primary">Cardiologia</h3>
+                        <p class="card-text">Atención inmediata con:</p>
                         <ul class="list-group list-group-flush">
-                            {% for item in servicio.items %}
-                            <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>{{ item }}</li>
-                            {% endfor %}
+                            <li class="list-group-item">-</li>
+                            <li class="list-group-item">-</li>
+                            <li class="list-group-item">-</li>
+                            <li class="list-group-item">-</li>
+                            <li class="list-group-item">-</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            {% endfor %}
+
+            <!-- Servicio 2 - Telemedicina -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow">
+                    <img src="{{ url_for('static', filename='img/t.jpg') }}" 
+                         class="card-img-top" 
+                         alt="Hemodinamia">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">Hemodinamia</h3>
+                        <p class="card-text">Atención inmediata con:</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">-</li>
+                            <li class="list-group-item">-</li>
+                            <li class="list-group-item">-</li>
+                            <li class="list-group-item">-</li>
+                            <li class="list-group-item">-</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicio 3 - Cirugía -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow">
+                    <img src="{{ url_for('static', filename='img/c.jpg') }}" 
+                         class="card-img-top" 
+                         alt="Electrofisiologia">
+                         <div class="card-body">
+                            <h3 class="card-title text-primary">Electrofisiologia</h3>
+                            <p class="card-text">Atención inmediata con:</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">-</li>
+                                <li class="list-group-item">-</li>
+                                <li class="list-group-item">-</li>
+                                <li class="list-group-item">-</li>
+                                <li class="list-group-item">-</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow">
+                    <img src="{{ url_for('static', filename='img/c.jpg') }}" 
+                         class="card-img-top" 
+                         alt="Cirugía Cardiovascular">
+                         <div class="card-body">
+                            <h3 class="card-title text-primary">Cirugía Cardiovascular</h3>
+                            <p class="card-text">Atención inmediata con:</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">-</li>
+                                <li class="list-group-item">-</li>
+                                <li class="list-group-item">-</li>
+                                <li class="list-group-item">-</li>
+                                <li class="list-group-item">-</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow">
+                    <img src="{{ url_for('static', filename='img/c.jpg') }}" 
+                         class="card-img-top" 
+                         alt="Cardiologia no invasiva">
+                         <div class="card-body">
+                            <h3 class="card-title text-primary">Cardiologia no invasiva</h3>
+                            <p class="card-text">Atención inmediata con:</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">-</li>
+                                <li class="list-group-item">-</li>
+                                <li class="list-group-item">-</li>
+                                <li class="list-group-item">-</li>
+                                <li class="list-group-item">-</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="row mt-5">
             <div class="col-12">
-                <div class="alert alert-info rounded-3 shadow-sm">
+                <div class="alert alert-info">
                     <h4>¿Necesitas un servicio especializado?</h4>
-                    <p class="mb-0">Contamos con más de 15 especialidades médicas. 
-                        <a href="/contacto" class="alert-link">Contáctanos para más información</a>
-                    </p>
+                    <p class="mb-0">Contamos con más de 15 especialidades médicas. <a href="/contacto" class="alert-link">Contáctanos para más información</a></p>
                 </div>
             </div>
         </div>
