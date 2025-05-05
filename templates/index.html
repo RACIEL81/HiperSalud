@@ -1,45 +1,43 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-<section class="hero bg-light py-5 mt-5">
+<section class="hero bg-light py-5">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <h1 class="display-4 mb-4">HIPERSALUD</h1>
-                <p class="lead mb-4">Tu bienestar cardíaco en manos de expertos.</p>
-                <a href="/contacto" class="btn btn-primary btn-lg">Solicitar cita</a>
+        <div class="row justify-content-center">
+            <!-- Video principal -->
+            <div class="col-12 col-lg-8 mb-4">
+                <div class="ratio ratio-16x9 mx-auto" style="max-width: 800px;">
+                    <video autoplay muted loop playsinline class="rounded">
+                        <source src="{{ url_for('static', filename='img/logo.mp4') }}" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                </div>
             </div>
-            <div class="col-md-6 text-center">
-                <video autoplay muted loop playsinline class="img-fluid rounded shadow" style="max-width: 100%;">
-                    <source src="{{ url_for('static', filename='img/hero-medicos.mp4') }}" type="video/mp4">
-                    Tu navegador no soporta el video.
-                </video>
-                <p class="mt-2">
-                   
-                    <a href="" target="_blank"></a>
-                </p>
+
+            <!-- Botón de acción -->
+            <div class="col-12 text-center mt-4">
+                <a href="/contacto" class="btn btn-primary btn-lg px-5 py-3">Solicitar cita</a>
             </div>
         </div>
     </div>
 </section>
 
-<section class="servicios-destacados py-5">
+<section class="comprometidos-contigo py-5" 
+         style="background-image: url('{{ url_for('static', filename='img/m.jpeg') }}');
+                background-size: cover;
+                background-position: center;
+                position: relative;">
     <div class="container">
-        <h2 class="text-center mb-5">Nuestros Servicios</h2>
-        <div class="row g-4">
-            <!-- Repetir para cada servicio -->
-            <div class="col-md-4">
-                <div class="card h-100 shadow">
-                    <img src="{{ url_for('static', filename='img/urgencias.jpg') }}" 
-                         class="card-img-top" 
-                         alt="Servicio de urgencias">
-                    <div class="card-body">
-                        <h5 class="card-title">Urgencias 24/7</h5>
-                        <p class="card-text">Atención inmediata con equipos de última generación y personal calificado.</p>
-                    </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center bg-white p-4 rounded shadow-sm">
+                <h2 class="display-4 mb-4 text-primary">COMPROMETIDOS CONTIGO</h2>
+                <div class="lead text-dark mx-auto" style="max-width: 800px;">
+                    <p class="mb-4">
+                        Somos una institución pionera en la atención y tratamiento de enfermedades cardiovasculares 
+                        y de alta complejidad con alta calidad, tecnología de punta y un servicio personalizado.
+                    </p>
                 </div>
             </div>
-            <!-- Agregar más servicios aquí -->
         </div>
     </div>
 </section>
