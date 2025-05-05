@@ -21,6 +21,11 @@ def nosotros():
 def contacto():
     return render_template('contacto.html')
 
+# 🔧 NUEVA RUTA PARA EL FORMULARIO DE SOLICITAR CITA
+@app.route('/solicitar-cita')
+def solicitar_cita():
+    return render_template('solicitar_cita.html')
+
 if __name__ == '__main__':
     # Ejecutar en 0.0.0.0 y puerto 8000 para que se exponga correctamente en GitHub Codespaces
     app.run(host='0.0.0.0', port=8000, debug=True)
