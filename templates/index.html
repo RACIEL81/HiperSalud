@@ -1,84 +1,71 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-<section class="hero bg-light py-5">
-    <div class="container">
-        <div class="row justify-content-center">
-            <!-- Video principal -->
-            <div class="col-12 mb-4">
-                <div class="ratio ratio-16x9 mx-auto" style="max-width: 1000px;">
-                    <video autoplay muted loop playsinline class="rounded w-100" 
-                           style="filter: brightness(1.0) contrast(1.0); object-fit: contain; transform: scale(1.02);">
-                        <source src="{{ url_for('static', filename='img/logo.mp4') }}" type="video/mp4">
-                        Tu navegador no soporta el video.
-                    </video>
-                </div>
-            </div>
+<section class="py-5 position-relative" style="overflow: hidden;">
+    <!-- Fondo degradado con imagen -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+                    url('{{ url_for('static', filename='img/m.jpeg') }}') no-repeat center center;
+        background-size: cover;
+        z-index: 0;
+    "></div>
 
-            <!-- Botón de acción -->
-            <div class="col-12 text-center mt-4">
-                <a href="/solicitar-cita" class="btn btn-primary btn-lg px-5 py-3 shadow-lg">Solicitar cita</a>
+    <!-- Contenido con z-index encima del fondo -->
+    <div class="container position-relative" style="z-index: 1;">
+        <h2 class="text-center text-accen mb-4">Agenda tu cita</h2>
+        <p class="text-center text-dark">Déjanos tus datos y uno de nuestros asesores estará en contacto contigo.</p>
+        <form id="form-cita" class="mt-4">
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Tipo de cita" name="tipo_cita" required>
             </div>
-        </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Nombre del paciente" name="nombre" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Apellidos del paciente" name="apellidos" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Tipo de documento" name="tipo_documento" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Número de documento" name="documento" required>
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Correo electrónico" name="correo" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Teléfono de contacto" name="telefono" required>
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Selección de Sede" name="sede" required>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-success btn-lg" onclick="enviarWhatsApp()">Solicitar</button>
+            </div>
+        </form>
     </div>
 </section>
 
-<section class="comprometidos-contigo py-5"
-         style="background-image: url('{{ url_for('static', filename='img/m.jpeg') }}'); background-size: cover; background-position: center; position: relative;">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-10 text-center bg-white p-4 rounded-3 shadow-lg">
-                <h2 class="display-4 mb-4 text-primary fw-bold">Comprometidos contigo</h2>
-                <div class="lead text-dark mx-auto" style="max-width: 800px; text-align: justify;">
-                    <p class="mb-4 fs-5">
-                        Somos una institución pionera en la atención y tratamiento de enfermedades cardiovasculares.
-                        Contamos con personal altamente capacitado y tecnología avanzada para brindarte un servicio de calidad.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<script>
+function enviarWhatsApp() {
+    const form = document.getElementById("form-cita");
+    const datos = new FormData(form);
+    const mensaje = `Hola, quiero agendar una cita con los siguientes datos:\n
+- Tipo de cita: ${datos.get("tipo_cita")}
+- Nombre: ${datos.get("nombre")} ${datos.get("apellidos")}
+- Documento: ${datos.get("tipo_documento")} ${datos.get("documento")}
+- Correo: ${datos.get("correo")}
+- Teléfono: ${datos.get("telefono")}
+- Sede: ${datos.get("sede")}`;
 
-<!-- NUEVA SECCIÓN: Nuestros Profesionales -->
-<section class="py-5 bg-white">
-    <div class="container">
-        <!-- Imagen encima del título -->
-        <div class="text-center mb-4">
-            <img src="{{ url_for('static', filename='img/pro.jpg') }}" 
-                 alt="Nuestros profesionales" 
-                 class="img-fluid" 
-                 style="max-height: 400px;">
-        </div>
-
-        <h2 class="text-center text-primary fw-bold mb-4">Nuestros Profesionales</h2>
-        <div class="row justify-content-center">
-            <div class="col-12 mb-4">
-                <div style="max-width: 900px; margin: 0 auto; text-align: justify;">
-                    <p class="mb-4 fs-5">
-                        Atendemos miles de pacientes cada año que se encuentran en hospitalización por problemas cardiovasculares complejos,
-                        brindándoles un trato amable y seguro con apoyo de nuestros grupos de enfermeras y servicios adicionales,
-                        lo que permite que el paciente sienta confort durante su recuperación.
-                    </p>
-                    <p class="mb-4 fs-5">
-                        Hipersalud Latir es un espacio con calidez humana, donde el paciente con condición cardíaca aguda o crónica
-                        es evaluado, tratado y atendido con las mejores herramientas tecnológicas, científicas y humanas disponibles.
-                    </p>
-                </div>
-
-                <!-- Video vertical centrado -->
-                <div class="d-flex justify-content-center mt-4">
-                    <div style="width: 100%; max-width: 400px; aspect-ratio: 9/16; overflow: hidden; border-radius: 20px; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
-                        <video autoplay muted loop playsinline
-                               style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
-                            <source src="{{ url_for('static', filename='img/ta.mp4') }}" type="video/mp4">
-                            Tu navegador no soporta el video.
-                        </video>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
+    const telefono = "573143856779"; // Cambia por tu número de WhatsApp con código país
+    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, "_blank");
+}
+</script>
 {% endblock %}
