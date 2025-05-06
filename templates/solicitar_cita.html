@@ -1,8 +1,22 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-<section class="py-5">
-    <div class="container">
+<section class="py-5 position-relative" style="overflow: hidden;">
+    <!-- Fondo degradado con imagen -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+                    url('{{ url_for('static', filename='img/m.jpeg') }}') no-repeat center center;
+        background-size: cover;
+        z-index: 0;
+    "></div>
+
+    <!-- Contenido con z-index encima del fondo -->
+    <div class="container position-relative" style="z-index: 1;">
         <h2 class="text-center text-accen mb-4">AGENDA TU CITA</h2>
         <p class="text-center text-dark">Déjanos tus datos y uno de nuestros asesores estará en contacto contigo.</p>
         <form id="form-cita" class="mt-4">
