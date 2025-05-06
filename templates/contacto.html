@@ -1,7 +1,18 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-<section class="contacto py-5">
+<style>
+    .fondo-contacto {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+        url('/static/img/m.jpeg');
+        background-size: cover;S
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white; /* Asegura que el texto sea legible */
+    }
+</style>
+
+<section class="contacto py-5 fondo-contacto">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
