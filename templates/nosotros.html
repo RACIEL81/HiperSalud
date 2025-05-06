@@ -1,8 +1,21 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-<section class="about-us py-5 bg-white">
-    <div class="container">
+<section class="about-us py-5 position-relative" style="overflow: hidden;">
+    <!-- Fondo degradado con imagen -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+                    url('{{ url_for('static', filename='img/m.jpeg') }}') no-repeat center center;
+        background-size: cover;
+        z-index: 0;
+    "></div>
+
+    <div class="container position-relative" style="z-index: 1;">
         <div class="row align-items-center">
             <!-- Texto de Misión y Visión -->
             <div class="col-lg-6">
@@ -24,7 +37,7 @@
                 </div>
             </div>
 
-            <!-- Video estilo vertical enfocado en el corazón -->
+            <!-- Video vertical -->
             <div class="col-lg-6 mt-4 mt-lg-0 d-flex align-items-center justify-content-center">
                 <div style="width: 100%; aspect-ratio: 18 / 20; overflow: hidden; border-radius: 100px;">
                     <video autoplay muted loop playsinline
