@@ -1,30 +1,49 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-<section class="about-us py-5 bg-white">
-    <div class="container">
+<section class="about-us py-5 position-relative" style="overflow: hidden;">
+    <!-- Fondo degradado con imagen -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+                    url('{{ url_for('static', filename='img/m.jpeg') }}') no-repeat center center;
+        background-size: cover;
+        z-index: 0;
+    "></div>
+
+    <div class="container position-relative" style="z-index: 1;">
         <div class="row align-items-center">
             <!-- Texto de Misión y Visión -->
             <div class="col-lg-6">
                 <h1 class="mb-4">Sobre HiperSalud Latir</h1>
-                <p class="lead">Más de dos décadas brindando atención médica de excelencia</p>
+                <p class="lead" style="text-align: justify;">
+                    Más de dos décadas brindando atención médica de excelencia
+                </p>
                 <div class="mission-vision">
                     <div class="card mb-3 border-primary border-2">
                         <div class="card-body">
                             <h3 class="card-title">Misión</h3>
-                            <p>Brindar atención médica especializada y humanizada en cardiología, integrando ciencia, tecnología y calidez humana para prevenir, diagnosticar y tratar afecciones cardiovasculares, promoviendo hábitos saludables y acompañando a nuestros pacientes en cada etapa de su recuperación.</p>
+                            <p style="text-align: justify;">
+                                Brindar atención médica especializada y humanizada en cardiología, integrando ciencia, tecnología y calidez humana para prevenir, diagnosticar y tratar afecciones cardiovasculares, promoviendo hábitos saludables y acompañando a nuestros pacientes en cada etapa de su recuperación.
+                            </p>
                         </div>
                     </div>
                     <div class="card border-primary border-2">
                         <div class="card-body">
                             <h3 class="card-title">Visión</h3>
-                            <p>Ser la clínica líder en atención cardiovascular en la región, reconocida por su excelencia médica, tecnología y compromiso humano, mejorando la calidad de vida de nuestros pacientes a través de la prevención, diagnóstico y tratamiento oportuno de enfermedades del corazón.</p>
+                            <p style="text-align: justify;">
+                                Ser la clínica líder en atención cardiovascular en la región, reconocida por su excelencia médica, tecnología y compromiso humano, mejorando la calidad de vida de nuestros pacientes a través de la prevención, diagnóstico y tratamiento oportuno de enfermedades del corazón.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Video estilo vertical enfocado en el corazón -->
+            <!-- Video vertical -->
             <div class="col-lg-6 mt-4 mt-lg-0 d-flex align-items-center justify-content-center">
                 <div style="width: 100%; aspect-ratio: 18 / 20; overflow: hidden; border-radius: 100px;">
                     <video autoplay muted loop playsinline

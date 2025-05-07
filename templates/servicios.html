@@ -1,24 +1,35 @@
 {% extends "base.html" %}
 
 {% block contenido %}
-<section class="servicios py-5">
-    <div class="container">
+<section class="servicios py-5 position-relative" style="overflow: hidden;">
+    <!-- Fondo degradado con imagen -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
+                    url('{{ url_for('static', filename='img/m.jpeg') }}') no-repeat center center;
+        background-size: cover;
+        z-index: 0;
+    "></div>
+
+    <!-- Contenido con z-index para estar encima -->
+    <div class="container position-relative" style="z-index: 1;">
         <h1 class="text-center mb-5">Nuestros Servicios Médicos</h1>
 
         <div class="row g-4">
-            <!-- Servicio 1 - Cardiologia -->
+            <!-- Servicio 1 - Cardiología -->
             <div class="col-md-6 col-lg-4">
                 <div class="card h-100 shadow">
-                    <img src="{{ url_for('static', filename='img/cardio1.jpeg') }}" class="card-img-top" alt="Cardiologia">
+                    <img src="{{ url_for('static', filename='img/cardio1.jpeg') }}" class="card-img-top" alt="Cardiología">
                     <div class="card-body">
-                        <h3 class="card-title text-primary">Cardiologia</h3>
-                        <p class="card-text">Atención inmediata con:</p>
+                        <h3 class="card-title text-primary">Cardiología</h3>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">-</li>
-                            <li class="list-group-item">-</li>
-                            <li class="list-group-item">-</li>
-                            <li class="list-group-item">-</li>
-                            <li class="list-group-item">-</li>
+                            <li class="list-group-item" style="text-align: justify;">
+                                Especialidad médica que se enfoca en la prevención, diagnóstico y tratamiento de las enfermedades del corazón. Nuestros cardiólogos son médicos especializados que evalúan y tratan condiciones como la hipertensión, la enfermedad coronaria, la insuficiencia cardíaca, las arritmias, entre otras.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -30,25 +41,25 @@
                     <img src="{{ url_for('static', filename='img/hemo.jpeg') }}" class="card-img-top" alt="Hemodinamia">
                     <div class="card-body">
                         <h3 class="card-title text-primary">Hemodinamia</h3>
-                        
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Es una de las especialidades de la cardiología que se enfoca en la anatomía y funcionamiento del corazón y de sus estructuras sanguíneas como las arterias, venas, vénulas, arteriolas y capilares.</li>
-                          
+                            <li class="list-group-item" style="text-align: justify;">
+                                Es una de las especialidades de la cardiología que se enfoca en la anatomía y funcionamiento del corazón y de sus estructuras sanguíneas como las arterias, venas, vénulas, arteriolas y capilares.
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Servicio 3 - Electrofisiologia -->
+            <!-- Servicio 3 - Electrofisiología -->
             <div class="col-md-6 col-lg-4">
                 <div class="card h-100 shadow">
-                    <img src="{{ url_for('static', filename='img/electro.jpeg') }}" class="card-img-top" alt="Electrofisiologia">
+                    <img src="{{ url_for('static', filename='img/electro.jpeg') }}" class="card-img-top" alt="Electrofisiología">
                     <div class="card-body">
-                        <h3 class="card-title text-primary">Electrofisiologia</h3>
-                        <p class="card-text"></p>
+                        <h3 class="card-title text-primary">Electrofisiología</h3>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Se enfoca en el estudio y tratamiento de los trastornos del ritmo cardíaco, como arritmias, utilizamos técnicas avanzadas para diagnosticar y tratar problemas en la conducción eléctrica del corazón.</li>
-
+                            <li class="list-group-item" style="text-align: justify;">
+                                Se enfoca en el estudio y tratamiento de los trastornos del ritmo cardíaco, como arritmias. Utilizamos técnicas avanzadas para diagnosticar y tratar problemas en la conducción eléctrica del corazón.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -60,17 +71,10 @@
                     <img src="{{ url_for('static', filename='img/vascu.jpeg') }}" class="card-img-top" alt="Cirugía Cardiovascular">
                     <div class="card-body">
                         <h3 class="card-title text-primary">Cirugía Cardiovascular</h3>
-                        <p class="card-text"></p>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Especialidad quirúrgica que
-                                se enfoca en el tratamiento de
-                                enfermedades, trastornos del
-                                corazón y de los vasos sanguíneos. Nuestros cirujanos cardiovasculares
-                                utilizan técnicas quirúrgicas
-                                avanzadas para tratar condiciones
-                                como la enfermedad coronaria la insuficiencia cardíaca, las valvulopatías y las enfermedades de
-                                los grandes vasos.</li>
-
+                            <li class="list-group-item" style="text-align: justify;">
+                                Especialidad quirúrgica que se enfoca en el tratamiento de enfermedades, trastornos del corazón y de los vasos sanguíneos. Nuestros cirujanos cardiovasculares utilizan técnicas quirúrgicas avanzadas para tratar condiciones como la enfermedad coronaria, la insuficiencia cardíaca, las valvulopatías y enfermedades de los grandes vasos.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -79,13 +83,13 @@
             <!-- Servicio 5 - Cardiología no invasiva -->
             <div class="col-md-6 col-lg-4">
                 <div class="card h-100 shadow">
-                    <img src="{{ url_for('static', filename='img/noinva.jpeg') }}" class="card-img-top" alt="Cardiologia no invasiva">
+                    <img src="{{ url_for('static', filename='img/noinva.jpeg') }}" class="card-img-top" alt="Cardiología no invasiva">
                     <div class="card-body">
-                        <h3 class="card-title text-primary">Cardiologia no invasiva</h3>
-                        <p class="card-text"></p>
+                        <h3 class="card-title text-primary">Cardiología no invasiva</h3>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">En nuestro servicio de Cardiología no Invasiva nos enfocamos en el diagnóstico no invasivo de las enfermedades cardíacas y de las arterias coronarias, a través de técnicas no invasivas como ecografías y pruebas de esfuerzo, que obtienen imágenes de las estructuras del corazón en tiempo real junto a parámetros de su funcionamiento.</li>
-
+                            <li class="list-group-item" style="text-align: justify;">
+                                Nos enfocamos en el diagnóstico no invasivo de enfermedades cardíacas y arterias coronarias, mediante técnicas como ecografías y pruebas de esfuerzo que obtienen imágenes del corazón en tiempo real y parámetros de su funcionamiento.
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -95,9 +99,10 @@
         <!-- Alerta informativa -->
         <div class="row mt-5">
             <div class="col-12">
-                <div class="alert alert-info">
+                <div class="alert alert-info" style="text-align: justify;">
                     <h4>¿Necesitas un servicio especializado?</h4>
-                    <p class="mb-0">Contamos con más de 15 especialidades médicas. 
+                    <p class="mb-0">
+                        Contamos con más de 15 especialidades médicas. 
                         <a href="/contacto" class="alert-link">Contáctanos para más información</a>
                     </p>
                 </div>

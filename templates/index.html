@@ -4,7 +4,7 @@
 <section class="hero bg-light py-5">
     <div class="container">
         <div class="row justify-content-center">
-            <!-- Video principal - Modificado para mayor tamaño y claridad -->
+            <!-- Video principal -->
             <div class="col-12 mb-4">
                 <div class="ratio ratio-16x9 mx-auto" style="max-width: 1000px;">
                     <video autoplay muted loop playsinline class="rounded w-100" 
@@ -28,13 +28,55 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10 text-center bg-white p-4 rounded-3 shadow-lg">
-                <h2 class="display-4 mb-4 text-primary fw-bold">COMPROMETIDOS CONTIGO</h2>
-                <div class="lead text-dark mx-auto" style="max-width: 800px;">
+                <h2 class="display-4 mb-4 text-primary fw-bold">Comprometidos contigo</h2>
+                <div class="lead text-dark mx-auto" style="max-width: 800px; text-align: justify;">
                     <p class="mb-4 fs-5">
-                        Somos una institución pionera en la atención y tratamiento de enfermedades cardiovasculares,
-                        contamos con personal altamente capacitado y tecnología avanzada para brindarte un servicio de calidad.
+                        Somos una institución pionera en la atención y tratamiento de enfermedades cardiovasculares.
+                        Contamos con personal altamente capacitado y tecnología avanzada para brindarte un servicio de calidad.
                     </p>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NUEVA SECCIÓN: Nuestros Profesionales -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <!-- Imagen encima del título -->
+        <div class="text-center mb-4">
+            <img src="{{ url_for('static', filename='img/pro.png') }}" 
+                 alt="Nuestros profesionales" 
+                 class="img-fluid" 
+                 style="max-height: 400px;">
+        </div>
+
+        <h2 class="text-center text-primary fw-bold mb-4">Nuestros Profesionales</h2>
+        <div class="row justify-content-center">
+            <div class="col-12 mb-4">
+                <div style="max-width: 900px; margin: 0 auto; text-align: justify;">
+                    <p class="mb-4 fs-5">
+                        Atendemos miles de pacientes cada año que se encuentran en hospitalización por problemas cardiovasculares complejos,
+                        brindándoles un trato amable y seguro con apoyo de nuestros grupos de enfermeras y servicios adicionales,
+                        lo que permite que el paciente sienta confort durante su recuperación.
+                    </p>
+                    <p class="mb-4 fs-5">
+                        Hipersalud Latir es un espacio con calidez humana, donde el paciente con condición cardíaca aguda o crónica
+                        es evaluado, tratado y atendido con las mejores herramientas tecnológicas, científicas y humanas disponibles.
+                    </p>
+                </div>
+
+                <!-- Video vertical centrado -->
+                <div class="d-flex justify-content-center mt-4">
+                    <div style="width: 100%; max-width: 400px; aspect-ratio: 9/16; overflow: hidden; border-radius: 20px; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+                        <video autoplay muted loop playsinline
+                               style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+                            <source src="{{ url_for('static', filename='img/ta.mp4') }}" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
