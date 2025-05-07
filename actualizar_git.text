@@ -1,3 +1,7 @@
 git add .
 git commit -m "Descripción de los cambios"
 git push origin master
+////////////////////////////////////////
+git add templates/nosotros.html static/img/orga.mp4
+git commit -m "Actualización de nosotros.html y nuevo video orga.mp4"
+git push origin master
