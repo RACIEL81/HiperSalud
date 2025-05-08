@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<section class="about-us py-5 position-relative" style="overflow: hidden;">
+    <!-- Fondo degradado con imagen -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+                    url('{{ url_for('static', filename='img/m.jpeg') }}') no-repeat center center;
+        background-size: cover;
+        z-index: 0;
+    "></div>
+
+    <div class="container position-relative" style="z-index: 1;">
+        <div class="row align-items-center">
+            <!-- Texto de Misión y Visión -->
+            <div class="col-lg-6">
+                <h1 class="mb-4">Sobre HiperSalud Latir</h1>
+                <p class="lead" style="text-align: justify;">
+                    Más de dos décadas brindando atención médica de excelencia
+                </p>
+                <div class="mission-vision">
+                    <div class="card mb-3 border-primary border-2">
+                        <div class="card-body">
+                            <h3 class="card-title">Misión</h3>
+                            <p style="text-align: justify;">
+                                Brindar atención médica especializada y humanizada en cardiología, integrando ciencia, tecnología y calidez humana para prevenir, diagnosticar y tratar afecciones cardiovasculares, promoviendo hábitos saludables y acompañando a nuestros pacientes en cada etapa de su recuperación.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card border-primary border-2">
+                        <div class="card-body">
+                            <h3 class="card-title">Visión</h3>
+                            <p style="text-align: justify;">
+                                Ser la clínica líder en atención cardiovascular en la región, reconocida por su excelencia médica, tecnología y compromiso humano, mejorando la calidad de vida de nuestros pacientes a través de la prevención, diagnóstico y tratamiento oportuno de enfermedades del corazón.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video vertical -->
+            <div class="col-lg-6 mt-4 mt-lg-0 d-flex align-items-center justify-content-center">
+                <div style="width: 100%; aspect-ratio: 18 / 20; overflow: hidden; border-radius: 100px;">
+                    <video autoplay muted loop playsinline
+                           style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                        <source src="{{ url_for('static', filename='img/hero-medicos.mp4') }}" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <!-- Valores institucionales -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <h2 class="text-center mb-4">Nuestros Valores</h2>
+                <div class="row text-center">
+                    <div class="col-md-3 mb-4">
+                        <div class="card h-100 py-3 border-0">
+                            <i class="fas fa-heartbeat fa-3x text-primary mb-3"></i>
+                            <h4>Ética Médica</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="card h-100 py-3 border-0">
+                            <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                            <h4>Enfoque Humano</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="card h-100 py-3 border-0">
+                            <i class="fas fa-flask fa-3x text-primary mb-3"></i>
+                            <h4>Innovación</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="card h-100 py-3 border-0">
+                            <i class="fas fa-hand-holding-heart fa-3x text-primary mb-3"></i>
+                            <h4>Compromiso Social</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-8"> <!-- Más ancho -->
+                    <div style="position: relative; width: 100%; padding-top: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+                        <video autoplay muted loop playsinline
+                               style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+                            <source src="{{ url_for('static', filename='img/orga2.mp4') }}" type="video/mp4">
+                            Tu navegador no soporta el video.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</section>
+{% endblock %}
