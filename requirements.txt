@@ -4,7 +4,7 @@ asgiref==3.8.1
 bcrypt==4.3.0
 blinker==1.9.0
 CacheControl==0.14.2
-cachetools==5.5.2SS
+cachetools==5.5.2
 certifi==2025.1.31
 cffi==1.17.1
 channels==4.2.2
